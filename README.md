@@ -76,7 +76,7 @@ For learning, this can be reduced into three files:
 - variables.tf
 - outputs.tf
 ```
-But for an EKS + Runtime Fabric project, the current file split is safer because networking, EKS, ingress, and Runtime Fabric have different responsibilities and failure modes.
+
 ---
 
 Instead of manually writing hundreds of Terraform resources for VPC, route tables, IAM roles, security groups, EKS cluster, node groups, and KMS keys, the module manages them for you.
