@@ -44,6 +44,61 @@ It includes Terraform scripts for:
     ├── production-hardening.md
     └── terraform-design-notes.md
 ```
+---
+## Simplified view of this project
+```
+terraform.tfvars
+   ↓
+variables.tf
+   ↓
+locals.tf
+   ↓
+main.tf
+   ├── VPC module
+   └── EKS module
+        ↓
+providers.tf
+   ├── AWS Provider
+   ├── Kubernetes Provider
+   └── Helm Provider
+        ↓
+ingress-nginx.tf
+   └── NGINX Ingress Controller
+        ↓
+runtime-fabric.tf
+   └── local-exec → rtfctl validate/install
+        ↓
+outputs.tf
+```
+For learning, this can be reduced into three files:
+```
+- main.tf
+- variables.tf
+- outputs.tf
+```
+But for an EKS + Runtime Fabric project, the current file split is safer because networking, EKS, ingress, and Runtime Fabric have different responsibilities and failure modes.
+---
+
+Instead of manually writing hundreds of Terraform resources for VPC, route tables, IAM roles, security groups, EKS cluster, node groups, and KMS keys, the module manages them for you.
+
+Your project structure is:
+
+Root Terraform Module
+│
+├── VPC Module
+│   ├── VPC
+│   ├── Subnets
+│   ├── NAT Gateway
+│   └── Route tables
+│
+└── EKS Module
+    ├── EKS control plane
+    ├── Managed worker nodes
+    ├── IAM roles
+    ├── Security groups
+    └── KMS encryption
+
+A module does not mean “one AWS resource.” A module is a reusable collection of related resources.
 
 ---
 
