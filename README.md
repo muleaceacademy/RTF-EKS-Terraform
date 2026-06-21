@@ -46,7 +46,7 @@ It includes Terraform scripts for:
 ```
 ---
 ## Simplified view of this project
-```
+```text
 terraform.tfvars
    ↓
 variables.tf
@@ -71,7 +71,7 @@ runtime-fabric.tf
 outputs.tf
 ```
 For learning, this can be reduced into three files:
-```
+```text
 - main.tf
 - variables.tf
 - outputs.tf
@@ -82,7 +82,7 @@ But for an EKS + Runtime Fabric project, the current file split is safer because
 Instead of manually writing hundreds of Terraform resources for VPC, route tables, IAM roles, security groups, EKS cluster, node groups, and KMS keys, the module manages them for you.
 
 Your project structure is:
-
+```text
 Root Terraform Module
 │
 ├── VPC Module
@@ -97,7 +97,7 @@ Root Terraform Module
     ├── IAM roles
     ├── Security groups
     └── KMS encryption
-
+```
 A module does not mean “one AWS resource.” A module is a reusable collection of related resources.
 
 ---
