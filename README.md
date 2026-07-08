@@ -4,14 +4,17 @@ This repository provisions an AWS EKS cluster and installs the Kubernetes founda
 
 
 ## YouTube Tutorial
-
 Watch the complete walkthrough here:
 
-<a href="https://youtu.be/WMDKV3wshu0">
-  <img src="https://img.youtube.com/vi/KM9dqF_RlkE/maxresdefault.jpg"
-       alt="RTF on AWS EKS using Terraform"
-       width="700">
+<a href="https://www.youtube.com/watch?v=WMDKV3wshu0" target="_blank" rel="noopener noreferrer">
+  <img 
+    src="https://img.youtube.com/vi/WMDKV3wshu0/maxresdefault.jpg" 
+    alt="Watch the YouTube video" 
+    width="720"
+  />
 </a>
+
+---
 
 The implementation is intentionally divided into three operational phases:
 
