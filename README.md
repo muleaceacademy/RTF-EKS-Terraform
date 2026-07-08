@@ -43,6 +43,7 @@ The implementation is intentionally divided into three operational phases:
 │   └── terraform.tfvars.example
 ├── scripts
 │   ├── install-prerequisites-mac.sh
+│   ├── install-prerequisites-windows.ps1
 │   ├── terraform-apply.sh
 │   └── terraform-destroy.sh
 ├── manifests
@@ -143,12 +144,17 @@ AWS Account
 ### Install local tools on Mac
 
 Run:
-
+If Mac:
 ```bash
 chmod +x scripts/install-prerequisites-mac.sh
 ./scripts/install-prerequisites-mac.sh
 ```
-
+If Windows:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Unblock-File .\install-prerequisites-windows.ps1
+.\install-prerequisites-windows.ps1
+```
 The script installs or validates:
 
 * Homebrew
