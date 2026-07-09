@@ -7,6 +7,7 @@
 #
 # Run:
 #   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+#   Unblock-File .\install-prerequisites-windows.ps1
 #   .\install-prerequisites-windows.ps1
 
 $ErrorActionPreference = "Stop"
